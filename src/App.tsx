@@ -1,11 +1,11 @@
 import { ThemeProvider } from "@/components/theme-provider"
 
-import viteLogo from "/vite.svg";
+
 
 import { Link, Outlet } from "react-router-dom";
 import { ChevronRightIcon, GitHubLogoIcon,InstagramLogoIcon,LinkedInLogoIcon,DownloadIcon } from '@radix-ui/react-icons'
 import GojoProfile from "./assets/images/gojo-1.webp"
-import { ModeToggle } from "./components/mode-toggle";
+// import { ModeToggle } from "./components/mode-toggle";
 import { Button } from "./components/ui/button";
 
 function App() {
@@ -24,9 +24,9 @@ function App() {
           </Link>
 
           <nav className=" text-accent-foreground flex gap-10">
-            <a className=" hover:underline animate__animated animate__faster animate__fadeInDown animate__delay-1s	" href="/react-vite-supreme/page2">About</a>
-            <a className=" hover:underline animate__animated animate__faster animate__fadeInDown animate__delay-2s" href="/react-vite-supreme/contact">Work</a>
-            <a className=" hover:underline animate__animated animate__faster animate__fadeInDown animate__delay-3s" href="/react-vite-supreme/contact">Contact</a>
+            <a className=" hover:underline hover:text-primary hover:decoration-primary/40 ease-out transition-all duration-200 underline-offset-4 animate__animated animate__faster animate__fadeInDown animate__delay-1s	" href="/react-vite-supreme/page2">About</a>
+            <a className=" hover:underline hover:text-primary hover:decoration-primary/40  underline-offset-4 ease-out transition-all duration-200 animate__animated animate__faster animate__fadeInDown animate__delay-2s" href="/react-vite-supreme/contact">Work</a>
+            <a className=" hover:underline hover:text-primary hover:decoration-primary/40 underline-offset-4 ease-out transition-all duration-200 animate__animated animate__faster animate__fadeInDown animate__delay-3s" href="/react-vite-supreme/contact">Contact</a>
           </nav>
         </div>
 
@@ -34,7 +34,7 @@ function App() {
         <div className="relative h-full w-full bg-background flex justify-around items-center overflow-hidden  ">
           <div className=" absolute  z-0 animate__animated animate__fast  animate__fadeIn ">
             <img
-              className=" md:scale-[1.3] object-contain h-[1000px] animate-float "
+              className=" md:scale-[1.3] pointer-events-none object-contain h-[1000px] animate-float "
               src={GojoProfile}
               alt=""
             />
@@ -57,9 +57,9 @@ function App() {
                 size="icon"
                 className=" animate__animated animate__zoomIn animate__faster h-12 mt-7 items-center text-lg hover:bg-accent-foreground/70 bg-accent-foreground backdrop-blur-md  text-accent w-[40%] gap-1 rounded-lg"
               >
-                Hire Me
+               <span className=" mt-1 ml-2">Hire Me</span> 
 
-                <ChevronRightIcon className="hover:text-accent/90 text-lg text-accent h-8 w-8 "/>
+                <ChevronRightIcon className="  hover:text-accent/90 text-lg text-accent h-8 w-8 "/>
                
               </Button>
             </div>

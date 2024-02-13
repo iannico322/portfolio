@@ -22,7 +22,7 @@ const Page2= lazy(() =>
 
 const router = createBrowserRouter([
   {
-    path: "/react-vite-supreme/",
+    path: "/portfolio/",
     element:  <>
     <Suspense fallback={<Loader />}>
       <App />
