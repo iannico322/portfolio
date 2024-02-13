@@ -30,7 +30,7 @@ const router = createBrowserRouter([
   </>,
     children: [
       {
-        path: "/react-vite-supreme/page1",
+        path: "/portfolio/page1",
         element: <>
         <Suspense fallback={<Loader />}>
           <Page1 />
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
       </>,
       },
       {
-        path: "/react-vite-supreme/page2",
+        path: "/portfolio/page2",
         element: <>
         <Suspense fallback={<Loader />}>
           <Page2 />
