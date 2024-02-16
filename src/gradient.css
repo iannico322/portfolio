@@ -1,0 +1,35 @@
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+      width: 60vh;
+    height: 60vh;
+    }
+    100% {
+      transform: rotate(360deg);
+      width: 90vh;
+    height: 90vh;
+    }
+  }
+
+  
+
+  .gradient {
+    --size: 60vh;
+    --speed: 60vh;
+    --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+    width: 60vh;
+    height: 60vh;
+    filter: blur(calc(60vh / 5));
+    background-image: linear-gradient(rgba(255, 42, 0, 0.85), #3300ff);
+    animation: rotate 20s cubic-bezier(0.8, 0.2, 0.2, 0.8) alternate infinite;
+    border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+  }
+  
+  @media (min-width: 720px) {
+    .gradient {
+      --size: 500px;
+    }
+  }
+
+  
+  /* This is just to transition when you change the viewport size. */

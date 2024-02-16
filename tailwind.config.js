@@ -89,11 +89,18 @@ module.exports = {
           '50%': { transform: 'translateY(20px) rotate(2deg)',   },
           '100%': {transform: 'translateY(0px) rotate(0deg)' },
         },
+        float2: {
+          '0%': { transform: 'translateY(0px) translateX(0px)' },
+          '50%': { transform: 'translateY(30px) translateX(-1000px)',   },
+          '100%': {transform: 'translateY(0px) translateX(0px)' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         float: 'float 7s ease-in-out infinite',
+        float2: 'float2 90s ease-in-out infinite',
+
         
       },
     },
