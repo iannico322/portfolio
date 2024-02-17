@@ -14,6 +14,7 @@
   
 
   .gradient {
+    display: flex;
     --size: 60vh;
     --speed: 60vh;
     --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
@@ -21,7 +22,7 @@
     height: 60vh;
     filter: blur(calc(60vh / 5));
     background-image: linear-gradient(rgba(255, 42, 0, 0.85), #3300ff);
-    animation: rotate 20s cubic-bezier(0.8, 0.2, 0.2, 0.8) alternate infinite;
+    animation: rotate 20s cubic-bezier(0.8, 0.6, 0.6, 0.8) alternate infinite;
     border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
   }
   
