@@ -2,7 +2,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 import AnimatedCursor from "react-animated-cursor"
 
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { ChevronRightIcon, GitHubLogoIcon,InstagramLogoIcon,LinkedInLogoIcon,DownloadIcon } from '@radix-ui/react-icons'
 import GojoProfile from "./assets/images/gojo-1.webp"
 // import { ModeToggle } from "./components/mode-toggle";
