@@ -5,7 +5,7 @@ import SlideUp from '../animation/revealUp'
 import './card.css'
 
 
-function ProjectCard({link,img,title,languanges,dateDeploy}:any) {
+function ProjectCard({link,img,title,languanges,status}:any) {
   return (
     
     <a href={link} target='_blank' className="ProjectCard relative   w-1/3  max-w-[100%] flex flex-col gap-1    ">
@@ -28,8 +28,14 @@ function ProjectCard({link,img,title,languanges,dateDeploy}:any) {
 <div className="header relative self-end">
       <SlideUp>
         <>
-        <span>Deployed: </span>
-        <span>{dateDeploy}</span>
+        <span>Status: </span>
+
+        {status=="Active"?
+        <span className=' text-green-500'>{status}</span>
+        :
+        <span className=' text-red-500'>{status}</span>
+      }
+        
         </>
       
       </SlideUp>
