@@ -16,13 +16,14 @@
   }
 
   .CardImage{
-    transition: ease-in-out 900ms;
+    filter:grayscale(100);
+    transition: ease-in-out 200ms;
     -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
       mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
   }
 
   .CardImage:hover{
-    filter:grayscale(100)
+    filter:grayscale(0)
   }
   
   .ProjectCard .main-content {
