@@ -10,6 +10,7 @@ import {
   DownloadIcon,
   BlendingModeIcon,
   DesktopIcon,
+  GearIcon,
 } from "@radix-ui/react-icons";
 import GojoProfile from "./assets/images/gojo-1.webp";
 // import { ModeToggle } from "./components/mode-toggle";
@@ -17,7 +18,6 @@ import { Button } from "./components/ui/button";
 
 import { useEffect, useState } from "react";
 import "./gradient.css";
-import styles from "./bubble.module.css";
 import ProjectCard from "./components/card/card";
 
 import image1 from "./assets/images/My Works/1.webp";
@@ -37,6 +37,7 @@ import image10 from "./assets/images/My Works/10.webp";
 
 import SlideUp from "./components/animation/revealUp";
 import CardSlide from "./components/animation/revealCard";
+import SlideUpSkills from "./components/animation/SlideUpSkills";
 
 function App() {
   useEffect(() => {
@@ -85,15 +86,17 @@ function App() {
       title: "Weeknd Album",
       languanges: ["HTML", "SCSS", "JS"],
       status: "Active",
-    },
-    {
-      link: "https://iannico322.github.io/BlackGold-Website/",
-      img: image7,
-      title: "Dark Gold",
-      languanges: ["HTML", "SCSS", "JS"],
-      status: "Active",
-    },
+    }
+    
   ]);
+
+  // {
+  //   link: "https://iannico322.github.io/BlackGold-Website/",
+  //   img: image7,
+  //   title: "Dark Gold",
+  //   languanges: ["HTML", "SCSS", "JS"],
+  //   status: "Active",
+  // },
 
   return (
     <ThemeProvider>
@@ -115,19 +118,19 @@ function App() {
               Home
             </a>
             <a
-              className=" animate__animated animate__faster animate__fadeInDown animate__delay-1s underline-offset-4 transition-all duration-200 ease-out hover:text-primary hover:underline hover:decoration-primary/40 sm:text-xs	"
+              className=" animate__animated animate__faster animate__fadeInDown animate__delay-2s underline-offset-4 transition-all duration-200 ease-out hover:text-primary hover:underline hover:decoration-primary/40 sm:text-xs	"
               href="#about"
             >
               About
             </a>
             <a
-              className=" animate__animated animate__faster animate__fadeInDown animate__delay-2s  underline-offset-4 transition-all duration-200 ease-out hover:text-primary hover:underline hover:decoration-primary/40 sm:text-xs"
+              className=" animate__animated animate__faster animate__fadeInDown animate__delay-3s  underline-offset-4 transition-all duration-200 ease-out hover:text-primary hover:underline hover:decoration-primary/40 sm:text-xs"
               href="#Work"
             >
               Projects
             </a>
             <a
-              className=" animate__animated animate__faster animate__fadeInDown animate__delay-3s underline-offset-4 transition-all duration-200 ease-out hover:text-primary hover:underline hover:decoration-primary/40 sm:text-xs"
+              className=" animate__animated animate__faster animate__fadeInDown animate__delay-4s underline-offset-4 transition-all duration-200 ease-out hover:text-primary hover:underline hover:decoration-primary/40 sm:text-xs"
               href="/react-vite-supreme/contact"
             >
               Contact
@@ -220,31 +223,12 @@ function App() {
                 </Reveal>
                 <SlideUp>
                   <p className=" text-[16px] font-light leading-[25px] text-accent-foreground sm:text-xs ">
-                    {"Hey are looking for a Front-end or Designer"
-                      .split("")
-                      .map((child, idx) => (
-                        <span className={styles.hoverText} key={idx}>
-                          {child}
-                        </span>
-                      ))}
+                    Are you looking for a front-end developer or a designer
+                      
                     <br />
-                    {"to build your brand and grow you business?"
-                      .split("")
-                      .map((child, idx) => (
-                        <span className={styles.hoverText} key={idx}>
-                          {child}
-                        </span>
-                      ))}
-
-                    <br />
-
-                    {"let’s shake hands with me."
-                      .split("")
-                      .map((child, idx) => (
-                        <span className={styles.hoverText} key={idx}>
-                          {child}
-                        </span>
-                      ))}
+                    to build your brand and grow your business?
+                    <br />Let’s connect and see how I can help you"
+                      
                   </p>
                 </SlideUp>
               </div>
@@ -294,29 +278,25 @@ function App() {
                 <Reveal>
                   <h1 className=" min-h-0 w-full indent-10 text-lg text-accent-foreground   ">
                     {" "}
-                    I’m Ian Nico Caulin, a passionate software developer and a
-                    BSIT student at USTP. I love creating innovative and
-                    user-friendly web and mobile applications using cutting-edge
-                    technologies.
+                    Hi, I’m Ian Nico Caulin, a BSIT student at USTP with a passion for web/app-development, machine learning, and design. I have experience in Python, C++, Java, PHP, HTML, CSS, JavaScript, React, Django, Figma, and React Native. I have knowledge of machine learning algorithms and used the GPT API for text, image classification and code generation.
                     <br />
-                    <br />I am always eager to learn new skills and collaborate
-                    with other developers. Check out some of my projects below
-                    and feel free to contact me if you have any questions or
-                    feedback.
+                    <br /> I have earned <a href="https://www.cloudskillsboost.google/public_profiles/f9bdb4d6-5ff2-4dcc-8415-e66e0d436528" className=" font-bold">badges</a> in <a href="https://www.cloudskillsboost.google/public_profiles/f9bdb4d6-5ff2-4dcc-8415-e66e0d436528" className=" font-bold">Google Cloud</a>   for cloud computing, big data, and machine learning. I love learning new skills and collaborating with other developers. Check out some of my projects below and contact me if you have any questions or feedback.
                   </h1>
                 </Reveal>
               </div>
             </div>
 
-            <div className="   mt-3 flex min-h-[400px] w-[100%] flex-col items-start justify-center gap-4   md:mt-20 md:w-[100%]">
+            <div className="   mt-3 flex min-h-[400px] w-[100%] flex-col items-center justify-center gap-4   md:mt-20 md:w-[100%]">
+              <hr className=" mt-7 border-1 border-primary w-full" />
               <Reveal>
-                <h1 className=" self-start text-2xl font-semibold text-accent-foreground">
+                <h1 className="  text-2xl font-semibold text-accent-foreground">
                   My Skills
                 </h1>
               </Reveal>
-              <div className=" relative flex min-h-[20px] w-full flex-row items-start justify-center  gap-5 md:flex-col md:items-center ">
-                <SlideUp>
-                  <div className=" flex w-[400px] flex-col border-x-[1px] border-y-[1px]  border-border pb-5">
+              <hr className="  border-1 border-primary w-full" />
+              <div className=" relative flex min-h-[20px]  w-full justify-around flex-row gap-5 md:flex-col md:items-center md:flex-wrap ">
+                <SlideUpSkills>
+                  <div className=" bg-black/40 h-full relative px-5 flex w-full    flex-col border-x-[1px] border-y-[1px]  border-border pb-5 text-center">
                     <div className=" flex flex-col items-center  justify-center gap-6">
                       <Button
                         variant="secondary"
@@ -332,24 +312,23 @@ function App() {
                       <SlideUp>
                         <p className=" text-center">
                           {" "}
-                          value simple content structure, clean design patterns,
-                          and thoughtful interactions.
+                          I’m a designer who loves simple, clear, and interactive design.
                         </p>
                       </SlideUp>
-                      <div className=" mt-4">
+                      <div className="  flex items-center flex-col mt-4 text-center w-ful">
                         <Reveal>
                           <p className=" text-primary">
-                            Things I enjoy designing:
+                          Things I enjoy designing:
                           </p>
                         </Reveal>
                         <SlideUp>
-                          <p>UX, UI, Web, Apps, Logos</p>
+                          <p className="">UX, UI, Web, Apps, Logos</p>
                         </SlideUp>
                       </div>
 
-                      <div className=" mt-4">
+                      <div className="  flex items-center flex-col mt-4 text-center w-ful">
                         <Reveal>
-                          <p className=" text-primary">Design Tools:</p>
+                          <p className=" text-primary text-center">Design Tools:</p>
                         </Reveal>
                         <SlideUp>
                           <p className=" text-center">
@@ -362,9 +341,11 @@ function App() {
                       </div>
                     </div>
                   </div>
-                </SlideUp>
-                <SlideUp>
-                  <div className=" flex w-[400px] flex-col border-x-[1px] border-y-[1px]  border-border pb-5 ">
+                </SlideUpSkills>
+
+
+                <SlideUpSkills>
+                  <div className=" flex w-full bg-black/40   px-5 flex-col border-x-[1px] border-y-[1px]  border-border pb-5 ">
                     <div className=" flex flex-col items-center  justify-center gap-6">
                       <Button
                         variant="secondary"
@@ -373,7 +354,7 @@ function App() {
                         <DesktopIcon className=" h-5 w-5 text-accent-foreground" />
                       </Button>
                       <Reveal>
-                        <h1 className=" text-lg font-bold text-accent-foreground">
+                        <h1 className=" text-center text-lg font-bold text-accent-foreground">
                           Frontend Developer
                         </h1>
                       </Reveal>
@@ -384,10 +365,10 @@ function App() {
                           ideas to life in the browser
                         </p>
                       </SlideUp>
-                      <div className=" mt-4 flex  flex-col items-center">
+                      <div className=" flex items-center flex-col mt-4 text-center w-ful">
                         <Reveal>
                           <p className=" self-center text-center text-primary  ">
-                            Languages I speak:
+                            Tech Stack:
                           </p>
                         </Reveal>
                         <SlideUp>
@@ -398,7 +379,7 @@ function App() {
                         </SlideUp>
                       </div>
 
-                      <div className=" mt-4">
+                      <div className="  flex items-center flex-col mt-4 text-center w-ful">
                         <Reveal>
                           <p className=" text-center text-primary">
                             Dev Tools:
@@ -417,7 +398,56 @@ function App() {
                       </div>
                     </div>
                   </div>
-                </SlideUp>
+                </SlideUpSkills>
+                
+                <SlideUpSkills>
+                  <div className=" flex px-5 w-full text-center bg-black/40   flex-col border-x-[1px] border-y-[1px]  border-border items-center justify-center pb-5">
+                    <div className=" flex flex-col items-center text-center  justify-center gap-6">
+                      <Button
+                        variant="secondary"
+                        className="  flex items-center justify-center "
+                      >
+                        <GearIcon className=" h-5 w-5 text-accent-foreground" />
+                      </Button>
+                      <Reveal>
+                        <h1 className=" text-lg font-bold text-accent-foreground">
+                          Machine Learning
+                        </h1>
+                      </Reveal>
+                      <SlideUp>
+                        <p className=" text-center">
+                          {" "}
+                          I have a passion for data analysis and using it to create innovative solutions
+                        </p>
+                      </SlideUp>
+                      <div className=" flex items-center flex-col mt-4 text-center w-ful">
+                        <Reveal>
+                          <p className="   text-primary">
+                            ML Stack:
+                          </p>
+                        </Reveal>
+                        <SlideUp>
+                          <p>Python TensorFlow | PyTorch | Scikit-learn | GPT API | Google Cloud</p>
+                        </SlideUp>
+                      </div>
+
+                      <div className="  flex items-center flex-col mt-4 text-center w-ful">
+                        <Reveal>
+                          <p className=" text-primary">ML Tools:</p>
+                        </Reveal>
+                        <SlideUp>
+                          <p className=" text-center">
+                          
+                          Kaggle <br />
+                          VS Code
+                          </p>
+                        </SlideUp>
+                      </div>
+                    </div>
+                  </div>
+                </SlideUpSkills>
+
+
               </div>
             </div>
           </div>
