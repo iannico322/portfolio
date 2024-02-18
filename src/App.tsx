@@ -17,7 +17,7 @@ import GojoProfile from "./assets/images/gojo-1.webp";
 // import { ModeToggle } from "./components/mode-toggle";
 import { Button } from "./components/ui/button";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./gradient.css";
 import ProjectCard from "./components/card/card";
 
@@ -45,9 +45,6 @@ import { FacebookIcon, YoutubeIcon } from "lucide-react";
 import axios from "axios";
 
 function App() {
-  useEffect(() => {
-    localStorage.setItem("vite-ui-theme", "dark");
-  }, []);
 
   const [message,setMessage] = useState({
     name:"",email:"",message:""

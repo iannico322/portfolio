@@ -1,5 +1,9 @@
+import { useEffect } from "react";
 import "./loader.css";
 const Loader = () => {
+  useEffect(() => {
+    localStorage.setItem("vite-ui-theme", "dark");
+  }, []);
   return (
     <div className="flex items-center justify-center w-screen h-screen bg-black ">
       <div className="container">
