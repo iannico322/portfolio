@@ -11,6 +11,7 @@ import {
   BlendingModeIcon,
   DesktopIcon,
   GearIcon,
+  EnvelopeClosedIcon,
 } from "@radix-ui/react-icons";
 import GojoProfile from "./assets/images/gojo-1.webp";
 // import { ModeToggle } from "./components/mode-toggle";
@@ -26,7 +27,7 @@ import image2 from "./assets/images/My Works/2.webp";
 import image4 from "./assets/images/My Works/4.webp";
 import image5 from "./assets/images/My Works/5.webp";
 import image6 from "./assets/images/My Works/6.webp";
-import image7 from "./assets/images/My Works/7.webp";
+// import image7 from "./assets/images/My Works/7.webp";
 import profile from "./assets/images/My Works/profile.webp";
 
 import Reveal from "./components/animation/reveal";
@@ -38,11 +39,19 @@ import image10 from "./assets/images/My Works/10.webp";
 import SlideUp from "./components/animation/revealUp";
 import CardSlide from "./components/animation/revealCard";
 import SlideUpSkills from "./components/animation/SlideUpSkills";
+import Input from "./components/input/input";
+import ButtonSend from "./components/buttonPlus/buttonSend";
+import { FacebookIcon, YoutubeIcon } from "lucide-react";
+import axios from "axios";
 
 function App() {
   useEffect(() => {
     localStorage.setItem("vite-ui-theme", "dark");
   }, []);
+
+  const [message,setMessage] = useState({
+    name:"",email:"",message:""
+  })
 
   const [projects] = useState([
     {
@@ -53,19 +62,20 @@ function App() {
       status: "Active",
     },
     {
-      link: "https://iannico322.github.io/liceo.cdo/",
-      img: image2,
-      title: "LICEO-CITC",
-      languanges: ["HTML", "CSS", "JS"],
-      status: "Active",
-    },
-    {
       link: "https://iannico322.github.io/umap.ustp/welcome",
       img: image5,
       title: "UMAP",
       languanges: ["React JS", "React Native", "Django", "tailwind"],
       status: "Expired Server",
     },
+    {
+      link: "https://iannico322.github.io/liceo.cdo/",
+      img: image2,
+      title: "LICEO-CITC",
+      languanges: ["HTML", "CSS", "JS"],
+      status: "Active",
+    },
+    
     {
       link: "https://iannico322.github.io/BanatHero/",
       img: image10,
@@ -131,7 +141,7 @@ function App() {
             </a>
             <a
               className=" animate__animated animate__faster animate__fadeInDown animate__delay-4s underline-offset-4 transition-all duration-200 ease-out hover:text-primary hover:underline hover:decoration-primary/40 sm:text-xs"
-              href="/react-vite-supreme/contact"
+              href="#Contact"
             >
               Contact
             </a>
@@ -182,7 +192,7 @@ function App() {
               >
                 <span className=" ml-2 mt-1">Hire Me</span>
 
-                <ChevronRightIcon className="  h-8 w-8 text-lg text-accent hover:text-accent/90 " />
+                <ChevronRightIcon className="  h-8 w-8 hover:text-accent-foreground/90 text-lg text-accent  " />
               </Button>
             </div>
 
@@ -286,14 +296,16 @@ function App() {
               </div>
             </div>
 
-            <div className="   mt-3 flex min-h-[400px] w-[100%] flex-col items-center justify-center gap-4   md:mt-20 md:w-[100%]">
-              <hr className=" mt-7 border-1 border-primary w-full" />
+            <div className="   mt-10 flex min-h-[400px] w-[100%] flex-col items-center justify-center gap-4   md:mt-20 md:w-[100%]">
+            <hr className=" w-full h-px border-0 bg-gradient-to-r from-primary/0 via-primary to-primary/0
+                " />
               <Reveal>
-                <h1 className="  text-2xl font-semibold text-accent-foreground">
+                <h1 className="  text-2xl font-semibold text-primary">
                   My Skills
                 </h1>
               </Reveal>
-              <hr className="  border-1 border-primary w-full" />
+              <hr className=" w-full h-px border-0 bg-gradient-to-r from-primary/0 via-primary to-primary/0
+                " />
               <div className=" relative flex min-h-[20px]  w-full justify-around flex-row gap-5 md:flex-col md:items-center md:flex-wrap ">
                 <SlideUpSkills>
                   <div className=" bg-black/40 h-full relative px-5 flex w-full    flex-col border-x-[1px] border-y-[1px]  border-border pb-5 text-center">
@@ -454,8 +466,7 @@ function App() {
         </div>
 
         {/* Work */}
-        <div
-          id="Work"
+        <div id="Work"
           className=" relative mb-[70px] box-border flex  min-h-[50vh] w-full flex-grow flex-col flex-wrap   items-center  justify-center gap-10  justify-self-center bg-background/0 backdrop-blur-lg   "
         >
           <Reveal>
@@ -489,6 +500,185 @@ function App() {
               View More in Github
             </a>
           </SlideUp>
+        </div>
+
+        <div id="Contact" className=" mt-10 relative mb-[70px] box-border flex min-h-[10vh] w-full flex-grow flex-col flex-wrap   items-center  justify-around gap-10  justify-self-center bg-background/0 backdrop-blur-lg   ">
+
+          <div className=" flex md:flex-col md:w-[90%] gap-10  w-[60%] justify-between">
+
+            <div className=" flex flex-col gap-5">
+              <h1 className=" text-primary text-center  text-base bg-primary/10 border border-primary px-3 py-2 rounded-full w-24 ">Contact</h1>
+              <h2 className=" text-5xl font-bold text-accent-foreground">Got a problem to  solve?</h2>
+              <p className=" text-accent-foreground/80">Get your space suit ready and tell me your ideas to develop your <b>dream website.</b> </p> 
+            </div>
+
+            <form className=" w-full sm:min-w-0 max-w-[500px] md:max-w-[100%] flex flex-col gap-10" onSubmit={async(e)=>{ e.preventDefault()
+console.log(message)
+
+
+const options = {
+  method: 'POST',
+  url: 'https://mail-sender-api1.p.rapidapi.com/',
+  headers: {
+    'content-type': 'application/json',
+    'X-RapidAPI-Key': 'b8fe42a150mshcf3853da3b83a75p1fcd4djsn10da89fae3e0',
+    'X-RapidAPI-Host': 'mail-sender-api1.p.rapidapi.com'
+  },
+  data: {
+    sendto: 'iannicocaulin@gmail.com',
+		name: `${message.name}`,
+		replyTo: 'Your Email address where users can send their reply',
+		ishtml: 'false',
+		title: `${message.name}`,
+		body: `from: ${message.email} | ${message.message}`
+  }
+};
+
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
+}
+            
+           
+
+
+            // setMessage({
+            //   name:"",email:"",message:""
+            // })
+            }}>
+              <Input
+              label="NAME"
+              value={message.name}
+              onChange={(e:any)=>{
+                setMessage({...message,name:e.target.value})
+              }}
+
+
+
+
+              
+              />
+
+              <Input
+              label="EMAIL"
+              value={message.email}
+              onChange={(e:any)=>{
+                setMessage({...message,email:e.target.value})
+              }}
+              />
+
+              
+
+              <div className=" flex flex-col ">
+                <label className=" mb-2 block text-sm/none uppercase text-neutrals-300 peer-disabled:cursor-not-allowed peer-disabled:opacity-7">MESSAGE</label>
+                <textarea
+                value={message.message}
+                onChange={(e:any)=>{
+                  setMessage({...message,message:e.target.value})
+                }}
+                
+                className=" active:border-[blue]/60 focus:border-[blue]/30 outline-none bg-[#161a2c] required: w-full text-base  text-accent-foreground border border-border px-3 py-3"  />
+
+              </div>
+              <div className=" flex justify-between gap-5">
+                <a href="mailto:iannicocaulin@gmail.com"  className=" flex gap-2 items-center text-accent-foreground/70 transition-all duration-150 hover:text-accent-foreground ">
+               <EnvelopeClosedIcon className=""/> <p className=" mt-1">iannicocaulin@gmail.com</p>
+                </a>    
+
+                <ButtonSend />
+              </div>
+               
+             
+            </form>
+
+
+
+          </div>
+
+
+          <footer className=" w-full flex flex-col border-neutral-400 ">
+                <hr className=" h-px border-0 bg-gradient-to-r from-primary/0 via-primary to-primary/0
+                " />
+                <div className=" w-full flex flex-col items-center gap-10">
+                  <a href="#Nico" className=" pt-10 flex  items-center gap-10 sm:gap-8">
+                  <h1 className=" font-inter text-4xl font-black leading-[30px] text-primary  sm:text-2xl sm:leading-[20px] ">
+                    N <span className=" ml-[2px] text-accent-foreground">I</span>{" "}
+                    <br /> <span>CO</span>{" "}
+            </h1>
+                  </a>
+
+          <div className=" mt-2 w-[50%] flex  flex-col items-center  " >
+          <hr className=" w-full h-px border-0 bg-gradient-to-r from-primary/0 via-primary to-primary/0
+                " />
+                <nav className=" py-5 flex gap-10 text-accent-foreground sm:gap-5">
+            <a
+              className="  transition-all duration-200 ease-out hover:text-primary  hover:decoration-primary/40 sm:text-xs	"
+              href="#Nico" 
+            >
+              Home
+            </a>
+            <a
+              className=" transition-all duration-200 ease-out hover:text-primary  hover:decoration-primary/40 sm:text-xs	"
+              href="#about"
+            >
+              About
+            </a>
+            <a
+              className="    transition-all duration-200 ease-out hover:text-primary  hover:decoration-primary/40 sm:text-xs"
+              href="#Work"
+            >
+              Projects
+            </a>
+            <a
+              className="  transition-all duration-200 ease-out hover:text-primary  hover:decoration-primary/40 sm:text-xs"
+              href="#Contact"
+            >
+              Contact
+            </a>
+              </nav>
+          <hr className=" w-full h-px border-0 bg-gradient-to-r from-primary/0 via-primary to-primary/0
+                " />
+                </div>
+
+                <div className=" flex flex-col items-center gap-10">
+
+                  <div className=" flex gap-5">
+                  <a href="www.facebook.com/why.stalking">
+                      <FacebookIcon className=" h-8 w-8 hover:text-accent-foreground/90"/>
+                    </a>
+
+                    <a href="https://www.youtube.com/channel/UCCMlCFqaB5Osn79M1ZSqPyg">
+                      <YoutubeIcon className=" h-8 w-8 hover:text-accent-foreground/90"/>
+                    </a>
+
+                    
+                    <a href="https://github.com/iannico322">
+                      <GitHubLogoIcon className=" h-8 w-8 hover:text-accent-foreground/90"/>
+                    </a>
+
+                    <a href="https://www.instagram.com/ianian_niconico">
+                      <InstagramLogoIcon className=" h-8 w-8 hover:text-accent-foreground/90"/>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/ian-nico">
+                      <LinkedInLogoIcon className=" h-8 w-8 hover:text-accent-foreground/90"/>
+                    </a>
+
+                    
+
+                  </div>
+                  <p className=" text-xs">© 2024 IAN NICO M. CAULIN</p>
+                </div>
+
+
+                </div>
+
+                
+                
+          </footer>
+
         </div>
       </div>
     </ThemeProvider>
