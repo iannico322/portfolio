@@ -45,10 +45,11 @@ import { FacebookIcon, YoutubeIcon } from "lucide-react";
 import axios from "axios";
 
 function App() {
-
-  const [message,setMessage] = useState({
-    name:"",email:"",message:""
-  })
+  const [message, setMessage] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const [projects] = useState([
     {
@@ -72,7 +73,7 @@ function App() {
       languanges: ["HTML", "CSS", "JS"],
       status: "Active",
     },
-    
+
     {
       link: "https://iannico322.github.io/BanatHero/",
       img: image10,
@@ -93,8 +94,7 @@ function App() {
       title: "Weeknd Album",
       languanges: ["HTML", "SCSS", "JS"],
       status: "Active",
-    }
-    
+    },
   ]);
 
   // {
@@ -120,7 +120,7 @@ function App() {
           <nav className=" flex gap-10 text-accent-foreground sm:gap-5">
             <a
               className=" animate__animated animate__faster animate__fadeInDown animate__delay-1s underline-offset-4 transition-all duration-200 ease-out hover:text-primary hover:underline hover:decoration-primary/40 sm:text-xs	"
-              href="#Nico" 
+              href="#Nico"
             >
               Home
             </a>
@@ -189,7 +189,7 @@ function App() {
               >
                 <span className=" ml-2 mt-1">Hire Me</span>
 
-                <ChevronRightIcon className="  h-8 w-8 hover:text-accent-foreground/90 text-lg text-accent  " />
+                <ChevronRightIcon className="  h-8 w-8 text-lg text-accent hover:text-accent-foreground/90  " />
               </Button>
             </div>
 
@@ -231,11 +231,10 @@ function App() {
                 <SlideUp>
                   <p className=" text-[16px] font-light leading-[25px] text-accent-foreground sm:text-xs ">
                     Are you looking for a front-end developer or a designer
-                      
                     <br />
                     to build your brand and grow your business?
-                    <br />Let’s connect and see how I can help you"
-                      
+                    <br />
+                    Let’s connect and see how I can help you"
                   </p>
                 </SlideUp>
               </div>
@@ -252,11 +251,14 @@ function App() {
           </div>
         </div>
 
-        <div id="about" className="  relative flex min-h-0 flex-col items-center justify-center gap-20 bg-transparent    sm:mt-0  sm:w-full  ">
+        <div
+          id="about"
+          className="  relative flex min-h-0 flex-col items-center justify-center gap-20 bg-transparent    sm:mt-0  sm:w-full  "
+        >
           <h1 className=" absolute left-0 z-0 ml-[20px] w-[90%] text-[20vw] font-bold text-primary sm:rotate-90 sm:text-[40vw]  ">
             AboutMe
           </h1>
-          <div  className=" mt-[10vh]   relative box-border flex min-h-[10px] w-[90%] flex-col overflow-hidden rounded-lg bg-[#1b1b1b]/50 px-5 py-10 backdrop-blur-lg sm:min-h-0">
+          <div className=" relative   mt-[10vh] box-border flex min-h-[10px] w-[90%] flex-col overflow-hidden rounded-lg bg-[#1b1b1b]/50 px-5 py-10 backdrop-blur-lg sm:min-h-0">
             <div className=" flex w-full flex-col gap-2">
               <SlideUp>
                 <p className=" text-5xl font-semibold text-accent-foreground sm:text-xl">
@@ -285,27 +287,53 @@ function App() {
                 <Reveal>
                   <h1 className=" min-h-0 w-full indent-10 text-lg text-accent-foreground   ">
                     {" "}
-                    Hi, I’m Ian Nico Caulin, a BSIT student at USTP with a passion for web/app-development, machine learning, and design. I have experience in Python, C++, Java, PHP, HTML, CSS, JavaScript, React, Django, Figma, and React Native. I have knowledge of machine learning algorithms and used the GPT API for text, image classification and code generation.
+                    Hi, I’m Ian Nico Caulin, a BSIT student at USTP with a
+                    passion for web/app-development, machine learning, and
+                    design. I have experience in Python, C++, Java, PHP, HTML,
+                    CSS, JavaScript, React, Django, Figma, and React Native. I
+                    have knowledge of machine learning algorithms and used the
+                    GPT API for text, image classification and code generation.
                     <br />
-                    <br /> I have earned <a href="https://www.cloudskillsboost.google/public_profiles/f9bdb4d6-5ff2-4dcc-8415-e66e0d436528" className=" font-bold">badges</a> in <a href="https://www.cloudskillsboost.google/public_profiles/f9bdb4d6-5ff2-4dcc-8415-e66e0d436528" className=" font-bold">Google Cloud</a>   for cloud computing, big data, and machine learning. I love learning new skills and collaborating with other developers. Check out some of my projects below and contact me if you have any questions or feedback.
+                    <br /> I have earned{" "}
+                    <a
+                      href="https://www.cloudskillsboost.google/public_profiles/f9bdb4d6-5ff2-4dcc-8415-e66e0d436528"
+                      className=" font-bold"
+                    >
+                      badges
+                    </a>{" "}
+                    in{" "}
+                    <a
+                      href="https://www.cloudskillsboost.google/public_profiles/f9bdb4d6-5ff2-4dcc-8415-e66e0d436528"
+                      className=" font-bold"
+                    >
+                      Google Cloud
+                    </a>{" "}
+                    for cloud computing, big data, and machine learning. I love
+                    learning new skills and collaborating with other developers.
+                    Check out some of my projects below and contact me if you
+                    have any questions or feedback.
                   </h1>
                 </Reveal>
               </div>
             </div>
 
             <div className="   mt-10 flex min-h-[400px] w-[100%] flex-col items-center justify-center gap-4   md:mt-20 md:w-[100%]">
-            <hr className=" w-full h-px border-0 bg-gradient-to-r from-primary/0 via-primary to-primary/0
-                " />
+              <hr
+                className=" h-px w-full border-0 bg-gradient-to-r from-primary/0 via-primary to-primary/0
+                "
+              />
               <Reveal>
                 <h1 className="  text-2xl font-semibold text-primary">
                   My Skills
                 </h1>
               </Reveal>
-              <hr className=" w-full h-px border-0 bg-gradient-to-r from-primary/0 via-primary to-primary/0
-                " />
-              <div className=" relative flex min-h-[20px]  w-full justify-around flex-row gap-5 md:flex-col md:items-center md:flex-wrap ">
+              <hr
+                className=" h-px w-full border-0 bg-gradient-to-r from-primary/0 via-primary to-primary/0
+                "
+              />
+              <div className=" relative flex min-h-[20px]  w-full flex-row justify-around gap-5 md:flex-col md:flex-wrap md:items-center ">
                 <SlideUpSkills>
-                  <div className=" bg-black/40 h-full relative px-5 flex w-full    flex-col border-x-[1px] border-y-[1px]  border-border pb-5 text-center">
+                  <div className=" relative flex h-full w-full flex-col border-x-[1px]    border-y-[1px] border-border bg-black/40  px-5 pb-5 text-center">
                     <div className=" flex flex-col items-center  justify-center gap-6">
                       <Button
                         variant="secondary"
@@ -321,13 +349,14 @@ function App() {
                       <SlideUp>
                         <p className=" text-center">
                           {" "}
-                          I’m a designer who loves simple, clear, and interactive design.
+                          I’m a designer who loves simple, clear, and
+                          interactive design.
                         </p>
                       </SlideUp>
-                      <div className="  flex items-center flex-col mt-4 text-center w-ful">
+                      <div className="  w-ful mt-4 flex flex-col items-center text-center">
                         <Reveal>
                           <p className=" text-primary">
-                          Things I enjoy designing:
+                            Things I enjoy designing:
                           </p>
                         </Reveal>
                         <SlideUp>
@@ -335,9 +364,11 @@ function App() {
                         </SlideUp>
                       </div>
 
-                      <div className="  flex items-center flex-col mt-4 text-center w-ful">
+                      <div className="  w-ful mt-4 flex flex-col items-center text-center">
                         <Reveal>
-                          <p className=" text-primary text-center">Design Tools:</p>
+                          <p className=" text-center text-primary">
+                            Design Tools:
+                          </p>
                         </Reveal>
                         <SlideUp>
                           <p className=" text-center">
@@ -352,9 +383,8 @@ function App() {
                   </div>
                 </SlideUpSkills>
 
-
                 <SlideUpSkills>
-                  <div className=" flex w-full bg-black/40   px-5 flex-col border-x-[1px] border-y-[1px]  border-border pb-5 ">
+                  <div className=" flex w-full flex-col   border-x-[1px] border-y-[1px] border-border bg-black/40  px-5 pb-5 ">
                     <div className=" flex flex-col items-center  justify-center gap-6">
                       <Button
                         variant="secondary"
@@ -374,7 +404,7 @@ function App() {
                           ideas to life in the browser
                         </p>
                       </SlideUp>
-                      <div className=" flex items-center flex-col mt-4 text-center w-ful">
+                      <div className=" w-ful mt-4 flex flex-col items-center text-center">
                         <Reveal>
                           <p className=" self-center text-center text-primary  ">
                             Tech Stack:
@@ -388,7 +418,7 @@ function App() {
                         </SlideUp>
                       </div>
 
-                      <div className="  flex items-center flex-col mt-4 text-center w-ful">
+                      <div className="  w-ful mt-4 flex flex-col items-center text-center">
                         <Reveal>
                           <p className=" text-center text-primary">
                             Dev Tools:
@@ -408,10 +438,10 @@ function App() {
                     </div>
                   </div>
                 </SlideUpSkills>
-                
+
                 <SlideUpSkills>
-                  <div className=" flex px-5 w-full text-center bg-black/40   flex-col border-x-[1px] border-y-[1px]  border-border items-center justify-center pb-5">
-                    <div className=" flex flex-col items-center text-center  justify-center gap-6">
+                  <div className=" flex w-full flex-col items-center justify-center   border-x-[1px] border-y-[1px] border-border  bg-black/40 px-5 pb-5 text-center">
+                    <div className=" flex flex-col items-center justify-center  gap-6 text-center">
                       <Button
                         variant="secondary"
                         className="  flex items-center justify-center "
@@ -426,44 +456,44 @@ function App() {
                       <SlideUp>
                         <p className=" text-center">
                           {" "}
-                          I have a passion for data analysis and using it to create innovative solutions
+                          I have a passion for data analysis and using it to
+                          create innovative solutions
                         </p>
                       </SlideUp>
-                      <div className=" flex items-center flex-col mt-4 text-center w-ful">
+                      <div className=" w-ful mt-4 flex flex-col items-center text-center">
                         <Reveal>
-                          <p className="   text-primary">
-                            ML Stack:
-                          </p>
+                          <p className="   text-primary">ML Stack:</p>
                         </Reveal>
                         <SlideUp>
-                          <p>Python TensorFlow | PyTorch | Scikit-learn | GPT API | Google Cloud</p>
+                          <p>
+                            Python TensorFlow | PyTorch | Scikit-learn | GPT API
+                            | Google Cloud
+                          </p>
                         </SlideUp>
                       </div>
 
-                      <div className="  flex items-center flex-col mt-4 text-center w-ful">
+                      <div className="  w-ful mt-4 flex flex-col items-center text-center">
                         <Reveal>
                           <p className=" text-primary">ML Tools:</p>
                         </Reveal>
                         <SlideUp>
                           <p className=" text-center">
-                          
-                          Kaggle <br />
-                          VS Code
+                            Kaggle <br />
+                            VS Code
                           </p>
                         </SlideUp>
                       </div>
                     </div>
                   </div>
                 </SlideUpSkills>
-
-
               </div>
             </div>
           </div>
         </div>
 
         {/* Work */}
-        <div id="Work"
+        <div
+          id="Work"
           className=" relative mb-[70px] box-border flex  min-h-[50vh] w-full flex-grow flex-col flex-wrap   items-center  justify-center gap-10  justify-self-center bg-background/0 backdrop-blur-lg   "
         >
           <Reveal>
@@ -499,183 +529,183 @@ function App() {
           </SlideUp>
         </div>
 
-        <div id="Contact" className=" mt-10 relative mb-[70px] box-border flex min-h-[10vh] w-full flex-grow flex-col flex-wrap   items-center  justify-around gap-10  justify-self-center bg-background/0 backdrop-blur-lg   ">
-
-          <div className=" flex md:flex-col md:w-[90%] gap-10  w-[60%] justify-between">
-
+        <div
+          id="Contact"
+          className=" relative mb-[10px] mt-10 box-border flex min-h-[10vh] w-full flex-grow flex-col flex-wrap   items-center  justify-around gap-10  justify-self-center bg-background/0 backdrop-blur-lg   "
+        >
+          <div className=" flex w-[60%] justify-between gap-10  md:w-[90%] md:flex-col">
             <div className=" flex flex-col gap-5">
-              <h1 className=" text-primary text-center  text-base bg-primary/10 border border-primary px-3 py-2 rounded-full w-24 ">Contact</h1>
-              <h2 className=" text-5xl font-bold text-accent-foreground">Got a problem to  solve?</h2>
-              <p className=" text-accent-foreground/80">Get your space suit ready and tell me your ideas to develop your <b>dream website.</b> </p> 
+              <h1 className=" w-24 rounded-full  border border-primary bg-primary/10 px-3 py-2 text-center text-base text-primary ">
+                Contact
+              </h1>
+              <h2 className=" text-5xl font-bold text-accent-foreground">
+                Got a problem to solve?
+              </h2>
+              <p className=" text-accent-foreground/80">
+                Get your space suit ready and tell me your ideas to develop your{" "}
+                <b>dream website.</b>{" "}
+              </p>
             </div>
 
-            <form className=" w-full sm:min-w-0 max-w-[500px] md:max-w-[100%] flex flex-col gap-10" onSubmit={async(e)=>{ e.preventDefault()
-console.log(message)
+            <form
+              className=" flex w-full max-w-[500px] flex-col gap-10 md:max-w-[100%] sm:min-w-0"
+              onSubmit={async (e) => {
+                e.preventDefault();
+                console.log(message);
 
+                const options = {
+                  method: "POST",
+                  url: "https://mail-sender-api1.p.rapidapi.com/",
+                  headers: {
+                    "content-type": "application/json",
+                    "X-RapidAPI-Key":
+                      "b8fe42a150mshcf3853da3b83a75p1fcd4djsn10da89fae3e0",
+                    "X-RapidAPI-Host": "mail-sender-api1.p.rapidapi.com",
+                  },
+                  data: {
+                    sendto: "iannicocaulin@gmail.com",
+                    name: `${message.name}`,
+                    replyTo:
+                      "Your Email address where users can send their reply",
+                    ishtml: "false",
+                    title: `${message.name}`,
+                    body: `from: ${message.email} | ${message.message}`,
+                  },
+                };
 
-const options = {
-  method: 'POST',
-  url: 'https://mail-sender-api1.p.rapidapi.com/',
-  headers: {
-    'content-type': 'application/json',
-    'X-RapidAPI-Key': 'b8fe42a150mshcf3853da3b83a75p1fcd4djsn10da89fae3e0',
-    'X-RapidAPI-Host': 'mail-sender-api1.p.rapidapi.com'
-  },
-  data: {
-    sendto: 'iannicocaulin@gmail.com',
-		name: `${message.name}`,
-		replyTo: 'Your Email address where users can send their reply',
-		ishtml: 'false',
-		title: `${message.name}`,
-		body: `from: ${message.email} | ${message.message}`
-  }
-};
+                try {
+                  const response = await axios.request(options);
+                  console.log(response.data);
+                } catch (error) {
+                  console.error(error);
+                }
 
-try {
-	const response = await axios.request(options);
-	console.log(response.data);
-} catch (error) {
-	console.error(error);
-}
-            
-           
-
-
-            // setMessage({
-            //   name:"",email:"",message:""
-            // })
-            }}>
-              <Input
-              label="NAME"
-              value={message.name}
-              onChange={(e:any)=>{
-                setMessage({...message,name:e.target.value})
+                setMessage({
+                  name:"",email:"",message:""
+                })
               }}
-
-
-
-
-              
+            >
+              <Input
+                label="NAME"
+                value={message.name}
+                onChange={(e: any) => {
+                  setMessage({ ...message, name: e.target.value });
+                }}
               />
 
               <Input
-              label="EMAIL"
-              value={message.email}
-              onChange={(e:any)=>{
-                setMessage({...message,email:e.target.value})
-              }}
+                label="EMAIL"
+                value={message.email}
+                onChange={(e: any) => {
+                  setMessage({ ...message, email: e.target.value });
+                }}
               />
-
-              
 
               <div className=" flex flex-col ">
-                <label className=" mb-2 block text-sm/none uppercase text-neutrals-300 peer-disabled:cursor-not-allowed peer-disabled:opacity-7">MESSAGE</label>
+                <label className=" text-neutrals-300 peer-disabled:opacity-7 mb-2 block text-sm/none uppercase peer-disabled:cursor-not-allowed">
+                  MESSAGE
+                </label>
                 <textarea
-                value={message.message}
-                onChange={(e:any)=>{
-                  setMessage({...message,message:e.target.value})
-                }}
-                
-                className=" active:border-[blue]/60 focus:border-[blue]/30 outline-none bg-[#161a2c] required: w-full text-base  text-accent-foreground border border-border px-3 py-3"  />
-
+                  value={message.message}
+                  onChange={(e: any) => {
+                    setMessage({ ...message, message: e.target.value });
+                  }}
+                  className=" required: w-full border border-border bg-[#161a2c] px-3 py-3  text-base text-accent-foreground outline-none focus:border-[blue]/30 active:border-[blue]/60"
+                />
               </div>
               <div className=" flex justify-between gap-5">
-                <a href="mailto:iannicocaulin@gmail.com"  className=" flex gap-2 items-center text-accent-foreground/70 transition-all duration-150 hover:text-accent-foreground ">
-               <EnvelopeClosedIcon className=""/> <p className=" mt-1">iannicocaulin@gmail.com</p>
-                </a>    
+                <a
+                  href="mailto:iannicocaulin@gmail.com"
+                  className=" flex items-center gap-2 text-accent-foreground/70 transition-all duration-150 hover:text-accent-foreground "
+                >
+                  <EnvelopeClosedIcon className="" />{" "}
+                  <p className=" mt-1">iannicocaulin@gmail.com</p>
+                </a>
 
                 <ButtonSend />
               </div>
-               
-             
             </form>
-
-
-
           </div>
 
+          <footer className=" flex w-full flex-col border-neutral-400 ">
+            <hr
+              className=" h-px border-0 bg-gradient-to-r from-primary/0 via-primary to-primary/0
+                "
+            />
+            <div className=" flex w-full flex-col items-center gap-5">
+              <a
+                href="#Nico"
+                className=" flex items-center  gap-10 pt-5 sm:gap-8"
+              >
+                <h1 className=" font-inter text-2xl font-black leading-[20px] text-primary  sm:text-2xl sm:leading-[20px] ">
+                  N <span className=" ml-[2px] text-accent-foreground">I</span>{" "}
+                  <br /> <span>CO</span>{" "}
+                </h1>
+              </a>
 
-          <footer className=" w-full flex flex-col border-neutral-400 ">
-                <hr className=" h-px border-0 bg-gradient-to-r from-primary/0 via-primary to-primary/0
-                " />
-                <div className=" w-full flex flex-col items-center gap-10">
-                  <a href="#Nico" className=" pt-10 flex  items-center gap-10 sm:gap-8">
-                  <h1 className=" font-inter text-4xl font-black leading-[30px] text-primary  sm:text-2xl sm:leading-[20px] ">
-                    N <span className=" ml-[2px] text-accent-foreground">I</span>{" "}
-                    <br /> <span>CO</span>{" "}
-            </h1>
+              <div className=" mt-2 flex w-[50%]  flex-col items-center  ">
+                <hr
+                  className=" h-px w-full border-0 bg-gradient-to-r from-primary/0 via-primary to-primary/0
+                "
+                />
+                <nav className=" flex gap-10 py-2 text-accent-foreground sm:gap-5">
+                  <a
+                    className=" text-sm  transition-all duration-200 ease-out hover:text-primary  hover:decoration-primary/40 sm:text-xs	"
+                    href="#Nico"
+                  >
+                    Home
+                  </a>
+                  <a
+                    className=" text-sm transition-all duration-200 ease-out hover:text-primary  hover:decoration-primary/40 sm:text-xs	"
+                    href="#about"
+                  >
+                    About
+                  </a>
+                  <a
+                    className=" text-sm   transition-all duration-200 ease-out hover:text-primary  hover:decoration-primary/40 sm:text-xs"
+                    href="#Work"
+                  >
+                    Projects
+                  </a>
+                  <a
+                    className=" text-sm  transition-all duration-200 ease-out hover:text-primary  hover:decoration-primary/40 sm:text-xs"
+                    href="#Contact"
+                  >
+                    Contact
+                  </a>
+                </nav>
+                <hr
+                  className=" h-px w-full border-0 bg-gradient-to-r from-primary/0 via-primary to-primary/0
+                "
+                />
+              </div>
+
+              <div className=" flex flex-col items-center gap-5">
+                <div className=" flex gap-5">
+                  <a href="www.facebook.com/why.stalking">
+                    <FacebookIcon className=" h-5 w-5 hover:text-accent-foreground/90" />
                   </a>
 
-          <div className=" mt-2 w-[50%] flex  flex-col items-center  " >
-          <hr className=" w-full h-px border-0 bg-gradient-to-r from-primary/0 via-primary to-primary/0
-                " />
-                <nav className=" py-5 flex gap-10 text-accent-foreground sm:gap-5">
-            <a
-              className="  transition-all duration-200 ease-out hover:text-primary  hover:decoration-primary/40 sm:text-xs	"
-              href="#Nico" 
-            >
-              Home
-            </a>
-            <a
-              className=" transition-all duration-200 ease-out hover:text-primary  hover:decoration-primary/40 sm:text-xs	"
-              href="#about"
-            >
-              About
-            </a>
-            <a
-              className="    transition-all duration-200 ease-out hover:text-primary  hover:decoration-primary/40 sm:text-xs"
-              href="#Work"
-            >
-              Projects
-            </a>
-            <a
-              className="  transition-all duration-200 ease-out hover:text-primary  hover:decoration-primary/40 sm:text-xs"
-              href="#Contact"
-            >
-              Contact
-            </a>
-              </nav>
-          <hr className=" w-full h-px border-0 bg-gradient-to-r from-primary/0 via-primary to-primary/0
-                " />
+                  <a href="https://www.youtube.com/channel/UCCMlCFqaB5Osn79M1ZSqPyg">
+                    <YoutubeIcon className=" h-5 w-5 hover:text-accent-foreground/90" />
+                  </a>
+
+                  <a href="https://github.com/iannico322">
+                    <GitHubLogoIcon className=" h-5 w-5 hover:text-accent-foreground/90" />
+                  </a>
+
+                  <a href="https://www.instagram.com/ianian_niconico">
+                    <InstagramLogoIcon className=" h-5 w-5 hover:text-accent-foreground/90" />
+                  </a>
+
+                  <a href="https://www.linkedin.com/in/ian-nico">
+                    <LinkedInLogoIcon className=" h-5 w-5 hover:text-accent-foreground/90" />
+                  </a>
                 </div>
-
-                <div className=" flex flex-col items-center gap-10">
-
-                  <div className=" flex gap-5">
-                  <a href="www.facebook.com/why.stalking">
-                      <FacebookIcon className=" h-8 w-8 hover:text-accent-foreground/90"/>
-                    </a>
-
-                    <a href="https://www.youtube.com/channel/UCCMlCFqaB5Osn79M1ZSqPyg">
-                      <YoutubeIcon className=" h-8 w-8 hover:text-accent-foreground/90"/>
-                    </a>
-
-                    
-                    <a href="https://github.com/iannico322">
-                      <GitHubLogoIcon className=" h-8 w-8 hover:text-accent-foreground/90"/>
-                    </a>
-
-                    <a href="https://www.instagram.com/ianian_niconico">
-                      <InstagramLogoIcon className=" h-8 w-8 hover:text-accent-foreground/90"/>
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/ian-nico">
-                      <LinkedInLogoIcon className=" h-8 w-8 hover:text-accent-foreground/90"/>
-                    </a>
-
-                    
-
-                  </div>
-                  <p className=" text-xs">© 2024 IAN NICO M. CAULIN</p>
-                </div>
-
-
-                </div>
-
-                
-                
+                <code className=" text-xs">© 2024 IAN NICO M. CAULIN</code>
+              </div>
+            </div>
           </footer>
-
         </div>
       </div>
     </ThemeProvider>
