@@ -45,6 +45,9 @@ import { FacebookIcon, YoutubeIcon } from "lucide-react";
 import axios from "axios";
 
 function App() {
+  const [loading,SetLoading]= useState({
+    state:false,message:""
+  })
   const [message, setMessage] = useState({
     name: "",
     email: "",
@@ -183,14 +186,14 @@ function App() {
                 </p>
               </Reveal>
 
-              <Button
-                size="icon"
+              <a href="#Contact"
+                
                 className=" mt-7 h-12 w-[40%] items-center   gap-1 rounded-lg bg-accent-foreground text-lg text-accent backdrop-blur-md transition-all duration-700 hover:translate-x-2 hover:bg-accent-foreground/70  active:translate-x-2 sm:mt-2 sm:h-10 sm:w-[30%] sm:text-sm "
               >
                 <span className=" ml-2 mt-1">Hire Me</span>
 
                 <ChevronRightIcon className="  h-8 w-8 text-lg text-accent hover:text-accent-foreground/90  " />
-              </Button>
+              </a>
             </div>
 
             <div className=" absolute bottom-0 flex flex-col gap-5 sm:fixed sm:right-0 sm:mb-4 sm:mr-4">
@@ -240,7 +243,7 @@ function App() {
               </div>
 
               <a
-                href="./Google-Cloud-Skill-badges.pdf"
+                href="./IanNicoCaulin-CV.pdf"
                 download={true}
                 className=" animate__animated animate__fadeIn animate__faster animate__delay-1s mt-7   flex w-[40%]  items-center justify-center gap-2  rounded-md bg-primary/10  py-2 font-inter  text-lg text-primary backdrop-blur-lg transition-all duration-200  hover:bg-primary/30  hover:text-accent-foreground active:translate-y-2 sm:mt-3  sm:w-[60%] sm:text-xs "
               >
@@ -595,6 +598,7 @@ function App() {
 
               <Input
                 label="EMAIL"
+                type="email"
                 value={message.email}
                 onChange={(e: any) => {
                   setMessage({ ...message, email: e.target.value });
@@ -606,12 +610,18 @@ function App() {
                   MESSAGE
                 </label>
                 <textarea
+                required
+
                   value={message.message}
                   onChange={(e: any) => {
                     setMessage({ ...message, message: e.target.value });
                   }}
                   className=" required: w-full border border-border bg-[#161a2c] px-3 py-3  text-base text-accent-foreground outline-none focus:border-[blue]/30 active:border-[blue]/60"
                 />
+              </div>
+
+              <div className=" text-green-500 ">
+                <p></p>
               </div>
               <div className=" flex justify-between gap-5">
                 <a
@@ -621,8 +631,13 @@ function App() {
                   <EnvelopeClosedIcon className="" />{" "}
                   <p className=" mt-1">iannicocaulin@gmail.com</p>
                 </a>
+                  <div>
+                    <ButtonSend />
+                    
 
-                <ButtonSend />
+
+                  </div>
+                
               </div>
             </form>
           </div>
