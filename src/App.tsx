@@ -554,38 +554,67 @@ function App() {
               className=" flex w-full max-w-[500px] flex-col gap-10 md:max-w-[100%] sm:min-w-0"
               onSubmit={async (e) => {
                 e.preventDefault();
-                console.log(message);
+if (loading.state==false) {
+  SetLoading({
+    state:true,message:"Sending..."
+  })
+ 
 
-                const options = {
-                  method: "POST",
-                  url: "https://mail-sender-api1.p.rapidapi.com/",
-                  headers: {
-                    "content-type": "application/json",
-                    "X-RapidAPI-Key":
-                      "b8fe42a150mshcf3853da3b83a75p1fcd4djsn10da89fae3e0",
-                    "X-RapidAPI-Host": "mail-sender-api1.p.rapidapi.com",
-                  },
-                  data: {
-                    sendto: "iannicocaulin@gmail.com",
-                    name: `${message.name}`,
-                    replyTo:
-                      "Your Email address where users can send their reply",
-                    ishtml: "false",
-                    title: `${message.name}`,
-                    body: `from: ${message.email} | ${message.message}`,
-                  },
-                };
+  const options = {
+    method: "POST",
+    url: "https://mail-sender-api1.p.rapidapi.com/",
+    headers: {
+      "content-type": "application/json",
+      "X-RapidAPI-Key":
+        "b8fe42a150mshcf3853da3b83a75p1fcd4djsn10da89fae3e0",
+      "X-RapidAPI-Host": "mail-sender-api1.p.rapidapi.com",
+    },
+    data: {
+      sendto: "iannicocaulin@gmail.com",
+      name: `${message.name}`,
+      replyTo:
+        "Your Email address where users can send their reply",
+      ishtml: "false",
+      title: `${message.name}`,
+      body: `from: ${message.email} | ${message.message}`,
+    },
+  };
 
-                try {
-                  const response = await axios.request(options);
-                  console.log(response.data);
-                } catch (error) {
-                  console.error(error);
-                }
+  try {
+    const response = await axios.request(options);
+    SetLoading({
+      state:true,message:"Messange Succesfully sent"
+    })
 
-                setMessage({
-                  name:"",email:"",message:""
-                })
+    setTimeout(()=>{
+      
+      SetLoading({
+        state:false,message:""
+      })
+    },4000)
+    console.log(response.data);
+    setMessage({
+      name:"",email:"",message:""
+    })
+  }
+  catch (error) {
+    SetLoading({
+      state:true,message:"Message Not Sent"
+    })
+
+    setTimeout(()=>{
+      SetLoading({
+        state:false,message:""
+      })
+    },5000)
+    console.error(error);
+  }
+
+  
+}
+                
+
+                
               }}
             >
               <Input
@@ -620,8 +649,8 @@ function App() {
                 />
               </div>
 
-              <div className=" text-green-500 ">
-                <p></p>
+              <div className={loading.state?" flex items-center justify-center text-slate-100 border-slate-100/20 border bg-slate-100/10 rounded-md px-2 py-3":"hidden "}>
+                <p>{loading.message}</p>
               </div>
               <div className=" flex justify-between gap-5">
                 <a
@@ -631,7 +660,7 @@ function App() {
                   <EnvelopeClosedIcon className="" />{" "}
                   <p className=" mt-1">iannicocaulin@gmail.com</p>
                 </a>
-                  <div>
+                  <div >
                     <ButtonSend />
                     
 
