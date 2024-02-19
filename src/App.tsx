@@ -188,7 +188,7 @@ function App() {
 
               <a href="#Contact"
                 
-                className=" mt-7 h-12 w-[40%] items-center   gap-1 rounded-lg bg-accent-foreground text-lg text-accent backdrop-blur-md transition-all duration-700 hover:translate-x-2 hover:bg-accent-foreground/70  active:translate-x-2 sm:mt-2 sm:h-10 sm:w-[30%] sm:text-sm "
+                className=" flex items-center mt-7 h-12 w-[40%] justify-center   gap-1 rounded-lg bg-accent-foreground text-lg text-accent backdrop-blur-md transition-all duration-700 hover:translate-x-2 hover:bg-accent-foreground/70  active:translate-x-2 sm:mt-2 sm:h-10 sm:w-[30%] sm:text-sm "
               >
                 <span className=" ml-2 mt-1">Hire Me</span>
 
@@ -541,7 +541,7 @@ function App() {
               <h1 className=" w-24 rounded-full  border border-primary bg-primary/10 px-3 py-2 text-center text-base text-primary ">
                 Contact
               </h1>
-              <h2 className=" text-5xl font-bold text-accent-foreground">
+              <h2 className=" sm:text-4xl text-5xl font-bold text-accent-foreground">
                 Got a problem to solve?
               </h2>
               <p className=" text-accent-foreground/80">
@@ -658,7 +658,7 @@ if (loading.state==false) {
                   className=" flex items-center gap-2 text-accent-foreground/70 transition-all duration-150 hover:text-accent-foreground "
                 >
                   <EnvelopeClosedIcon className="" />{" "}
-                  <p className=" mt-1">iannicocaulin@gmail.com</p>
+                  <p className=" mt-1 sm:text-xs">iannicocaulin@gmail.com</p>
                 </a>
                   <div >
                     <ButtonSend />
