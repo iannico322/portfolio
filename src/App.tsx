@@ -814,7 +814,7 @@ if (loading.state==false) {
                     <InstagramLogoIcon className=" h-5 w-5 hover:text-accent-foreground/90" />
                   </a>
 
-                  <a target="_blank" href="https://www.linkedin.com/in/ian-nico">
+                  <a  href="https://www.linkedin.com/in/ian-nico" target="_blank">
                     <LinkedInLogoIcon className=" h-5 w-5 hover:text-accent-foreground/90" />
                   </a>
                 </div>
