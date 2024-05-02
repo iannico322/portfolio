@@ -798,23 +798,23 @@ if (loading.state==false) {
 
               <div className=" flex flex-col items-center gap-5">
                 <div className=" flex gap-5">
-                  <a href="www.facebook.com/why.stalking">
+                  <a href="https://www.facebook.com/why.stalking" target="_blank">
                     <FacebookIcon className=" h-5 w-5 hover:text-accent-foreground/90" />
                   </a>
 
-                  <a href="https://www.youtube.com/channel/UCCMlCFqaB5Osn79M1ZSqPyg">
+                  <a target="_blank" href="https://www.youtube.com/channel/UCCMlCFqaB5Osn79M1ZSqPyg">
                     <YoutubeIcon className=" h-5 w-5 hover:text-accent-foreground/90" />
                   </a>
 
-                  <a href="https://github.com/iannico322">
+                  <a target="_blank" href="https://github.com/iannico322">
                     <GitHubLogoIcon className=" h-5 w-5 hover:text-accent-foreground/90" />
                   </a>
 
-                  <a href="https://www.instagram.com/ianian_niconico">
+                  <a target="_blank" href="https://www.instagram.com/ianian_niconico">
                     <InstagramLogoIcon className=" h-5 w-5 hover:text-accent-foreground/90" />
                   </a>
 
-                  <a href="https://www.linkedin.com/in/ian-nico">
+                  <a target="_blank" href="https://www.linkedin.com/in/ian-nico">
                     <LinkedInLogoIcon className=" h-5 w-5 hover:text-accent-foreground/90" />
                   </a>
                 </div>
