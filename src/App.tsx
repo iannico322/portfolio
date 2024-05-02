@@ -44,7 +44,25 @@ import ButtonSend from "./components/buttonPlus/buttonSend";
 import { FacebookIcon, YoutubeIcon } from "lucide-react";
 import axios from "axios";
 
+// import Swiper core and required modules
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Cert1 from './assets/certs/1_page-0001.jpg'
+import Cert2 from './assets/certs/2_page-0001.jpg'
+import Cert3 from './assets/certs/3_page-0001.jpg'
+import Cert4 from './assets/certs/4_page-0001.jpg'
+import Cert5 from './assets/certs/5_page-0001.jpg'
+import Cert6 from './assets/certs/6_page-0001.jpg'
+
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { FreeMode } from "swiper/modules";
+
 function App() {
+
+
   const [loading,SetLoading]= useState({
     state:false,message:""
   })
@@ -107,6 +125,29 @@ function App() {
   //   languanges: ["HTML", "SCSS", "JS"],
   //   status: "Active",
   // },
+
+  const [certView,setCertView] = useState(3.2)
+
+  function isMobileView() {
+    return window.matchMedia("(max-width: 768px)").matches;
+}
+
+function isTabletView() {
+  return window.matchMedia("(max-width: 1090px)").matches;
+}
+
+
+  window.addEventListener('resize', function() {
+    if (isMobileView()) {
+      setCertView(1)
+    } else if(isTabletView()){
+      setCertView(2)
+    }
+     else {
+      setCertView(3.2)
+    }
+});
+
 
   return (
     <ThemeProvider>
@@ -494,13 +535,44 @@ function App() {
           </div>
         </div>
 
+        <div className=" relative w-full h-[40vh] lg:h-[380px] my-[10vh] ">
+          <div className=" flex justify-center ">
+          <Reveal>
+            <h1 className=" relative  text-4xl text-accent-foreground">
+              My <span className=" font-bold text-primary">Certificates</span>{" "}
+            </h1>
+          </Reveal>
+          </div>
+        
+        <Swiper
+    slidesPerView={certView}
+    spaceBetween={10}
+    freeMode={true}
+    autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+    }}
+    modules={[FreeMode]}
+    className=" w-full h-full my-5 overflow-hidden"
+>
+    {[Cert5,Cert4,Cert6,Cert1,Cert2,Cert3].map((e:any,key:any)=>(
+        <SwiperSlide key={key} className="  ">
+            <SlideUp>
+                <img src={e} className=" p-5 w-[520px] h-[420px]  lg:w-[500px] lg:h-[300px] rounded-md text-black bg-[#1b1b1b]/50  backdrop-blur-lg object-contain " />
+            </SlideUp>
+        </SwiperSlide>
+    ))}
+</Swiper>
+
+        </div>
+
         {/* Work */}
         <div
           id="Work"
           className=" relative mb-[70px] box-border flex  min-h-[50vh] w-full flex-grow flex-col flex-wrap   items-center  justify-center gap-10  justify-self-center bg-background/0 backdrop-blur-lg   "
         >
           <Reveal>
-            <h1 className=" relative top-0 mt-[10vh] text-4xl text-accent-foreground">
+            <h1 className=" relative top-0  text-4xl text-accent-foreground">
               My <span className=" font-bold text-primary">Works</span>{" "}
             </h1>
           </Reveal>
