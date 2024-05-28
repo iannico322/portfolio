@@ -1,4 +1,12 @@
 import { ThemeProvider } from "@/components/theme-provider";
+import Cert1 from './assets/certs/4_page-0001-2e77c4ce.jpg'
+import Cert2 from './assets/certs/2_page-0001.jpg'
+import Cert3 from './assets/certs/3_page-0001.jpg'
+import Cert4 from './assets/certs/5_page-0001-c7f8d414.jpg'
+import Cert5 from './assets/certs/6_page-0001-7b70c6a6.jpg'
+import Cert6 from './assets/certs/1_page-0001.jpg'
+
+
 
 import AnimatedCursor from "react-animated-cursor";
 import { Outlet } from "react-router-dom";
@@ -26,7 +34,7 @@ import image2 from "./assets/images/My Works/2.webp";
 
 import image4 from "./assets/images/My Works/4.webp";
 import image5 from "./assets/images/My Works/5.webp";
-import image6 from "./assets/images/My Works/6.webp";
+import image6 from "./assets/images/My Works/Screenshot 2024-05-28 114120.jpg";
 // import image7 from "./assets/images/My Works/7.webp";
 import profile from "./assets/images/My Works/profile.webp";
 
@@ -34,7 +42,7 @@ import Reveal from "./components/animation/reveal";
 
 // import image8 from './assets/images/My Works/8.webp'
 // import image9 from './assets/images/My Works/9.webp'
-import image10 from "./assets/images/My Works/10.webp";
+import image10 from "./assets/images/My Works/Screenshot 2024-05-28 113940.jpg";
 
 import SlideUp from "./components/animation/revealUp";
 import CardSlide from "./components/animation/revealCard";
@@ -44,10 +52,38 @@ import ButtonSend from "./components/buttonPlus/buttonSend";
 import { FacebookIcon, YoutubeIcon } from "lucide-react";
 import axios from "axios";
 
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/autoplay';
+
+import 'swiper/css/pagination';
+
+// import required modules
+import { FreeMode} from 'swiper/modules';
+
+
 function App() {
+
+  const [certView,SetCertView] = useState(3)
+  function isMobileView() {
+    return window.matchMedia("(max-width: 768px)").matches;
+}
+
+  window.addEventListener('resize', function() {
+    if (isMobileView()) {
+      SetCertView(1)
+    } else {
+      SetCertView(3)
+    }
+});
   const [loading,SetLoading]= useState({
     state:false,message:""
   })
+  
   const [message, setMessage] = useState({
     name: "",
     email: "",
@@ -78,11 +114,11 @@ function App() {
     },
 
     {
-      link: "https://iannico322.github.io/BanatHero/",
+      link: "https://iannico322.github.io/balaod/",
       img: image10,
-      title: "BanatHero",
-      languanges: ["HTML", "CSS", "JS"],
-      status: "Active",
+      title: "Balaod Mindanaw",
+      languanges: ["Reactsx", "React Native", "Django", "tailwind"],
+      status: "No Finished",
     },
     {
       link: "https://iannico322.github.io/wow2k23/",
@@ -94,11 +130,12 @@ function App() {
     {
       link: "https://iannico322.github.io/The-Weeknd/",
       img: image6,
-      title: "Weeknd Album",
-      languanges: ["HTML", "SCSS", "JS"],
+      title: "DTS",
+      languanges: ["Reactsx", "React Native", "Django", "tailwind"],
       status: "Active",
     },
   ]);
+
 
   // {
   //   link: "https://iannico322.github.io/BlackGold-Website/",
@@ -180,9 +217,9 @@ function App() {
               </Reveal>
               <Reveal>
                 <p className=" animate__animated animate__fadeInLeft animate__fast text-[24px] font-light leading-[25px] text-accent-foreground sm:text-[11px] sm:leading-[15px]">
-                  Front-end Developer and UI
+                  Full Stack Developer and UI
                   <br className=" sm:hidden" />
-                  Designer
+                  Designer, and <br className=" hidden md:flex " />  Cybersecurity  Enthusiast
                 </p>
               </Reveal>
 
@@ -218,6 +255,8 @@ function App() {
             </div>
           </div>
 
+          
+
           <div className="relative flex min-h-[10%] flex-col justify-start gap-20  sm:ml-4 sm:mt-0   sm:min-h-0 sm:gap-1">
             <div className=" flex flex-col  gap-1">
               <p className=" animate__animated animate__fadeInUp animate__delay-.8s text-xl font-semibold text-primary  sm:text-sm">
@@ -227,17 +266,17 @@ function App() {
                 <Reveal>
                   <h1 className="     text-[34px] font-semibold leading-[38px]  text-accent-foreground sm:text-base ">
                     Based in Cagayan de Oro <br />
-                    i’m developer and <br />
-                    UI/UX designer.
+                    I’m a developer,
+                    UI/UX designer, <br /> and Cybersecurity Enthusiast.
                   </h1>
                 </Reveal>
                 <SlideUp>
                   <p className=" text-[16px] font-light leading-[25px] text-accent-foreground sm:text-xs ">
-                    Are you looking for a front-end developer or a designer
+                  Are you looking for a front-end developer, a designer  
                     <br />
-                    to build your brand and grow your business?
+                    to build your brand, or someone to enhance your digital security?
                     <br />
-                    Let’s connect and see how I can help you"
+                    Let’s connect and see how I can help you.
                   </p>
                 </SlideUp>
               </div>
@@ -253,7 +292,7 @@ function App() {
             </div>
           </div>
         </div>
-
+        
         <div
           id="about"
           className="  relative flex min-h-0 flex-col items-center justify-center gap-20 bg-transparent    sm:mt-0  sm:w-full  "
@@ -290,27 +329,29 @@ function App() {
                 <Reveal>
                   <h1 className=" min-h-0 w-full indent-10 text-lg text-accent-foreground   ">
                     {" "}
-                    Hi, I’m Ian Nico Caulin, a BSIT student at USTP with a
-                    passion for web/app-development, machine learning, and
-                    design. I have experience in Python, C++, Java, PHP, HTML,
-                    CSS, JavaScript, React, Django, Figma, and React Native. I
-                    have knowledge of machine learning algorithms and used the
-                    GPT API for text, image classification and code generation.
+                    Hi, I’m Ian Nico Caulin, a BSIT student at USTP with a passion for web/app development, machine learning, design, and cybersecurity. I have experience in Python, C++, Java, PHP, HTML, CSS, JavaScript, React, Django, Figma, and React Native. I have knowledge of machine learning algorithms and have used the GPT API for text, image classification, and code generation.
                     <br />
-                    <br /> I have earned{" "}
+
+
+                    <br />
+                    With a keen interest in cybersecurity, I am proficient with tools like Wireshark, Metasploit, and Nmap to ensure robust and secure application development.
+                    
+                     I have earned{" "}
                     <a
                       href="https://www.cloudskillsboost.google/public_profiles/f9bdb4d6-5ff2-4dcc-8415-e66e0d436528"
-                      className=" font-bold"
+                      className=" font-bold underline"
+                      target="_blank"
                     >
                       badges
                     </a>{" "}
                     in{" "}
-                    <a
-                      href="https://www.cloudskillsboost.google/public_profiles/f9bdb4d6-5ff2-4dcc-8415-e66e0d436528"
-                      className=" font-bold"
+                    <span
+                      
+                      className=" font-bold "
+                      
                     >
                       Google Cloud
-                    </a>{" "}
+                    </span>{" "}
                     for cloud computing, big data, and machine learning. I love
                     learning new skills and collaborating with other developers.
                     Check out some of my projects below and contact me if you
@@ -453,36 +494,34 @@ function App() {
                       </Button>
                       <Reveal>
                         <h1 className=" text-lg font-bold text-accent-foreground">
-                          Machine Learning
+                        Machine Learning and Cybersecurity
                         </h1>
                       </Reveal>
                       <SlideUp>
                         <p className=" text-center">
                           {" "}
-                          I have a passion for data analysis and using it to
-                          create innovative solutions
+                          I have a passion for data analysis and using it to create innovative solutions, along with ensuring digital security.
                         </p>
                       </SlideUp>
                       <div className=" w-ful mt-4 flex flex-col items-center text-center">
                         <Reveal>
-                          <p className="   text-primary">ML Stack:</p>
+                          <p className="   text-primary">ML and Cybersecurity Stack:</p>
                         </Reveal>
                         <SlideUp>
                           <p>
-                            Python TensorFlow | PyTorch | Scikit-learn | GPT API
-                            | Google Cloud
+                          Python | TensorFlow | PyTorch | Scikit-learn | GPT API | Google Cloud | Wireshark | Metasploit | Nmap | Kali Linux
                           </p>
                         </SlideUp>
                       </div>
 
                       <div className="  w-ful mt-4 flex flex-col items-center text-center">
                         <Reveal>
-                          <p className=" text-primary">ML Tools:</p>
+                          <p className=" text-primary">ML and Cybersecurity Tools:</p>
                         </Reveal>
                         <SlideUp>
                           <p className=" text-center">
-                            Kaggle <br />
-                            VS Code
+                          Kaggle  <br />VS Code <br /> Kali Linux Tools <br />
+                           
                           </p>
                         </SlideUp>
                       </div>
@@ -492,6 +531,41 @@ function App() {
               </div>
             </div>
           </div>
+        </div>
+
+
+        <div className=" w-full h-[50vh] mb-10 ">
+          <div className=" w-full flex justify-center">
+            <Reveal>
+            <h1 className=" text-center relative top-0 mt-[10vh] text-4xl text-accent-foreground">
+              My <span className=" font-bold text-primary">Certificates</span>{" "}
+            </h1>
+          </Reveal>
+          </div>
+        
+        <Swiper
+        slidesPerView={certView}
+        spaceBetween={30}
+        freeMode={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+      }}
+        
+        modules={[FreeMode]}
+        className=" w-full h-full overflow-hidden"
+      >
+        
+        {[Cert4,Cert1,Cert6,Cert5,Cert3,Cert2,].map((e:any,key:any)=>(
+          <SwiperSlide key={key} className=" p-5 w-[500px] h-[20px]   rounded-md text-black bg-[#1b1b1b]/50  backdrop-blur-lg ">
+          <SlideUp>
+            <img src={e} className=" overflow-hidden object-contain rounded-lg w-full h-full" />
+            </SlideUp>
+          </SwiperSlide>
+          
+        ))}
+        
+      </Swiper>
         </div>
 
         {/* Work */}
@@ -531,6 +605,9 @@ function App() {
             </a>
           </SlideUp>
         </div>
+
+
+        
 
         <div
           id="Contact"
