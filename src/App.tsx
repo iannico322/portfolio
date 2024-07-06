@@ -197,7 +197,7 @@ function App() {
         >
           <div className=" animate__animated  animate__fadeInUp animate__delay-faster absolute z-0 ">
             <img
-              className=" pointer-events-none h-[900px] object-contain md:scale-[1.3] sm:bottom-0 sm:mt-[30vh] sm:h-[90vw]   "
+              className=" pointer-events-none sm:translate-y-[-80px] sm:translate-x-10 h-[900px] object-contain md:scale-[1.3] sm:bottom-0 sm:mt-[30vh] sm:h-[90vw]   "
               src={GojoProfile}
               alt=""
             />
@@ -217,9 +217,9 @@ function App() {
               </Reveal>
               <Reveal>
                 <p className=" animate__animated animate__fadeInLeft animate__fast text-[24px] font-light leading-[25px] text-accent-foreground sm:text-[11px] sm:leading-[15px]">
-                  Full Stack Developer, UI 
+                  Full Stack Developer, UI &nbsp;
                   <br className=" sm:hidden" />
-                  Designer, and <br className=" hidden md:flex " />  Cybersecurity  Enthusiast
+                   Designer, and <br className=" hidden md:flex " />  Cybersecurity  Enthusiast
                 </p>
               </Reveal>
 
