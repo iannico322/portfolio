@@ -114,11 +114,11 @@ function App() {
     },
 
     {
-      link: "https://iannico322.github.io/balaod/",
+      link: "https://balaod.org",
       img: image10,
       title: "Balaod Mindanaw",
-      languanges: ["Reactsx", "React Native", "Django", "tailwind"],
-      status: "No Finished",
+      languanges: ["Reactsx", "ShadCN","Tiptap" , "Django", "tailwind"],
+      status: "Active",
     },
     {
       link: "https://iannico322.github.io/wow2k23/",
@@ -217,7 +217,7 @@ function App() {
               </Reveal>
               <Reveal>
                 <p className=" animate__animated animate__fadeInLeft animate__fast text-[24px] font-light leading-[25px] text-accent-foreground sm:text-[11px] sm:leading-[15px]">
-                  Full Stack Developer and UI
+                  Full Stack Developer, UI 
                   <br className=" sm:hidden" />
                   Designer, and <br className=" hidden md:flex " />  Cybersecurity  Enthusiast
                 </p>
