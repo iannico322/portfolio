@@ -3,6 +3,8 @@ import Cert1 from './assets/certs/4_page-0001-2e77c4ce.jpg'
 import Cert2 from './assets/certs/2_page-0001.jpg'
 import Cert3 from './assets/certs/3_page-0001.jpg'
 import Cert4 from './assets/certs/5_page-0001-c7f8d414.jpg'
+import Cert7 from './assets/certs/IAN-NICO-M.-CAULIN-CERT-OJT.webp'
+
 import Cert5 from './assets/certs/6_page-0001-7b70c6a6.jpg'
 import Cert6 from './assets/certs/1_page-0001.jpg'
 
@@ -556,7 +558,7 @@ function App() {
         className=" w-full h-full overflow-hidden"
       >
         
-        {[Cert4,Cert1,Cert6,Cert5,Cert3,Cert2,].map((e:any,key:any)=>(
+        {[Cert7,Cert4,Cert1,Cert6,Cert5,Cert3,Cert2,].map((e:any,key:any)=>(
           <SwiperSlide key={key} className=" p-5 w-[500px] h-[20px]   rounded-md text-black bg-[#1b1b1b]/50  backdrop-blur-lg ">
           <SlideUp>
             <img src={e} className=" overflow-hidden object-contain rounded-lg w-full h-full" />
